@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prezentacja</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header, h2 {
+            color: black;
+            text-align: center;
+        }
+        .nazwaKlasy {
+            background-color: black;
+            color: white;
+        }
+        .presentation-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+        }
+        .text {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+        }
+        .text h1 {
+            margin-top: 0;
+        }
+        .text p {
+            margin-bottom: 20px;
+        }
+        .image {
+            flex: 1;
+            text-align: center;
+            background-color: #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .image img {
+            max-width: 100%;
+            max-height: 600px; /* Ustaw wysokość tutaj */
+            display: block;
+        }
+        .navigation {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+        }
+        .navigation button {
+            padding: 10px 20px;
+            margin: 0 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #start-presentation {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #back-to-main {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        table {
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            width: 100px;
+        }
+    </style>
+    <link rel="stylesheet" href="style/layout.css">
+
+
+</head>
+<body>
+    <header style="background-color: rgb(237, 217, 102); color: black; font-family: Arial, Helvetica, sans-serif;">
+        <h1>Strona o igrzyskach olimpijskich</h1>
+    </header>
+    <nav>
+        <h2 style="font-family: Arial, Helvetica, sans-serif;">Menu</h2>
+        <ul>
+            <li><a href="index.html">Strona główna</a></li>
+            <li><a href="artykul.html">Artykuł</a></li>
+            <li><a href="tabela.html">Tabela</a></li>
+            <li><a href="formularz.html">Formularz</a></li>
+            <li><a href="przelicznik.html">Przelicznik</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="prezentacja.html">Prezentacja</a></li>
+            <li><a href="znacznikMap.html">Znacznik MAP</a></li>
+            <li><a href="canvas.html">Canvas</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+    <article>
+        <h2>Najwybitniejsi na igrzyskach</h2>
+        Prezentacja przedstawia sylwetki sportowców, którzy osiągali największe sukcesy na igrzyskach olimpijskich.
+        <p>
+            <button id="start-presentation">Zobacz prezentację</button>
+
+            <div class="presentation-container" id="presentation-container">
+                <button id="back-to-main">Powrót</button>
+                <div class="container slide" id="slide1">
+                    <div class="text">
+                        <h1>Michael Phelps</h1>
+                        <p style="font-size: larger; text-align: justify;">Michael Fred Phelps (ur. 30 czerwca 1985 w Baltimore) - amerykański pływak, 23-krotny mistrz 
+                            olimpijski oraz 26-krotny mistrz świata. Jest także mistrzem świata na krótkim basenie i wielokrotnym 
+                            rekordzistą świata. Zdobył osiem medali (6 złotych i 2 brązowe) na igrzyskach olimpijskich w Atenach w 
+                            2004 roku oraz osiem złotych medali (w tym 7 rekordów świata) na igrzyskach olimpijskich w Pekinie. W 
+                            2012 roku zdobył sześć medali (4 złote i 2 srebrne) na igrzyskach w Londynie, a także sześć medali (pięć 
+                            złotych i jeden srebrny) na igrzyskach w Rio de Janeiro. Phelps jest również zdobywcą siedmiu złotych 
+                            medali na mistrzostwach świata w 2007 roku. Jest uznawany za najbardziej utytułowanego olimpijczyka w 
+                            historii nowożytnych igrzysk, z łączną liczbą 28 medali (w tym 23 złote, 3 srebrne i 2 brązowe). Jego 
+                            osiągnięcia oraz dominacja sprawiły, że jest uważany za najlepszego pływaka w historii tej dyscypliny.</p><br>
+                            <table>
+                                <tr>
+                                    <td style="background-color: gold;">Złote medale</td>
+                                    <td style="background-color: silver;">Srebrne medale</td>
+                                    <td style="background-color: rgba(145, 106, 106, 0.637);">Brązowe medale</td>
+                                </tr>
+                                <tr>
+                                    <td>23</td>
+                                    <td>3</td>
+                                    <td>2</td>
+                                </tr>
+                            </table>
+                    </div>
+                    <div class="image">
+                        <figure>
+                            <img src="images/Phelps.jpg" alt="Slide 1">
+                        </figure>
+                    </div>
+                
+                </div>
+                <div class="container slide" id="slide2" style="display:none;">
+                    <div class="text">
+                        <h1>Carl Lewis</h1>
+                        <p style="font-size: larger; text-align: justify;">Carl Lewis, właśc. Frederick Carlton Lewis (ur. 1 lipca 1961 w Birmingham) - amerykański lekkoatleta, sprinter i 
+                            skoczek w dal, jeden z najbardziej utytułowanych zawodników w historii sportu. Do historii sportu przeszły jego 
+                            pojedynki na 100 m podczas Mistrzostw Świata w Rzymie w 1987 i Igrzysk Olimpijskich w Seulu w 1988 z Benem Johnsonem 
+                            oraz w skoku w dal podczas Mistrzostw Świata w Tokio w 1991 z Mikiem Powellem.</p><br>
+                            <table>
+                                <tr>
+                                    <td style="background-color: gold;">Złote medale</td>
+                                    <td style="background-color: silver;">Srebrne medale</td>
+                                    <td style="background-color: rgba(145, 106, 106, 0.637);">Brązowe medale</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                </tr>
+                            </table>
+                    </div>
+                    <div class="image">
+                        <figure>
+                            <img src="images/Lewis.jpg" alt="Slide 2">
+                        </figure>
+                    </div>
+                </div>
+                <div class="container slide" id="slide3" style="display:none;">
+                    <div class="text">
+                        <h1>Usain Bolt</h1>
+                        <p style="font-size: larger; text-align: justify;">Usain St. Leo Bolt (ur. 21 sierpnia 1986 w Sherwood Content, Trelawny) - jamajski lekkoatleta, sprinter, ośmiokrotny 
+                            mistrz olimpijski z Pekinu, Londynu oraz Rio de Janeiro, jedenastokrotny mistrz, dwukrotny wicemistrz oraz brązowy medalista mistrzostw świata. 
+                            Obecny rekordzista świata w sprincie na dystansie 100 i 200 m. Mierzy 195 cm wzrostu, waży około 94 kg. Dzięki swoim osiągnięciom i 
+                            dominacji w rywalizacji sprinterskiej jest powszechnie uważany za najlepszego sprintera w historii. Jest nazywany Błyskawica.</p>
+                            <p style="font-size: larger; text-align: justify;">We wrześniu 2013 ogłosił, że planuje zakończyć karierę po igrzyskach w 2016. Jednakże później, w lipcu 2017 zdecydował, że jego ostatnimi 
+                                zawodami będą Mistrzostwa Świata w Lekkoatletyce 2017 w Londynie. Postanowił zrezygnować z bronienia tytułu w biegu na 200 metrów. Ostatecznie 
+                                wywalczył brąz na 100 m, natomiast z powodu skurczu mięśnia udowego nie ukończył sztafety 4x100 metrów. Po tych startach potwierdził, że definitywnie skończył karierę.</p><br>
+                                <table>
+                                    <tr>
+                                        <td style="background-color: gold;">Złote medale</td>
+                                        <td style="background-color: silver;">Srebrne medale</td>
+                                        <td style="background-color: rgba(145, 106, 106, 0.637);">Brązowe medale</td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                    </tr>
+                                </table>
+                    </div>
+                    <div class="image">
+                        <figure>
+                            <img src="images/Bolt.jpg" alt="Slide 3">
+                        </figure>
+                    </div>
+                </div>
+                <div class="container slide" id="slide4" style="display:none;">
+                    <div class="text">
+                        <h1>Ole Einar Bjoerndalen</h1>
+                        <p style="font-size: larger; text-align: justify;">Ole Einar Bjoerndalen (ur. 27 stycznia 1974 w Drammen) - norweski biathlonista, wielokrotny mistrz olimpijski, mistrz świata i zdobywca Pucharu Świata, najbardziej 
+                            utytułowany zawodnik w historii tej dyscypliny. Startował też w biegach narciarskich. Bjørndalen zdobył 8 tytułów mistrza 
+                            olimpijskiego, 20 tytułów (45 medali) mistrza świata oraz 6 razy wygrał klasyfikację Pucharu Świata (Kryształowa Kula). Dziewiętnastokrotnie 
+                            zdobył tzw. małą kryształową kulę, za zwycięstwo w poszczególnych klasyfikacjach. Do niego należy rekord liczby zwycięstw w zawodach pucharowych - 
+                            wygrał je 95 razy (pierwszy raz mając 21 lat 11 miesięcy i 15 dni) - 94 zwycięstwa w biathlonie plus jedno pucharowe zwycięstwo w biegach narciarskich. 
+                            Zwycięstwem w biegu indywidualnym (17 lutego 2009) podczas mistrzostw świata w Pjongczang (wyniki podczas MŚ zaliczane są również do klasyfikacji PŚ) poprawił 
+                            legendarne osiągnięcie Szweda Ingemara Stenmarka, który w narciarstwie alpejskim wygrał 86 razy w Pucharze Świata i był do tego czasu rekordzistą w liczbie zwycięstw. 
+                            Czterokrotnie wygrywał prestiżowe zawody World Team Challenge w Gelsenkirchen. Dwudziestokrotny mistrz Norwegii w latach 1995-2007. W 2011 r. otrzymał medal Holmenkollen</p><br>
+                            <table>
+                                <tr>
+                                    <td style="background-color: gold;">Złote medale</td>
+                                    <td style="background-color: silver;">Srebrne medale</td>
+                                    <td style="background-color: rgba(145, 106, 106, 0.637);">Brązowe medale</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>4</td>
+                                    <td>1</td>
+                                </tr>
+                            </table>
+                    </div>
+                    <div class="image">
+                        <figure>
+                            <img src="images/Bjoerndalen.jpg" alt="Slide 4">
+                        </figure>
+                    </div>
+                </div>
+                <div class="container slide" id="slide5" style="display:none;">
+                    <div class="text">
+                        <h1>Marit Bjoergen</h1>
+                        <p style="font-size: larger; text-align: justify;">Marit Bjoergen (ur. 21 marca 1980 w Trondheim) - norweska biegaczka narciarska, wielokrotna 
+                            medalistka igrzysk olimpijskich i mistrzostw świata, czterokrotna zdobywczyni Pucharu Świata, trzykrotna 
+                            zdobywczyni Małej Kryształowej Kuli w klasyfikacji dystansowej, pięciokrotna zdobywczyni Małej Kryształowej 
+                            Kuli w klasyfikacji sprinterskiej oraz zwyciężczyni Tour de Ski.</p>
+                            <p style="font-size: larger; text-align: justify;">Jest samodzielną rekordzistką w liczbie zwycięstw oraz miejsc na podium w zawodach Pucharu Świata oraz wielokrotną 
+                                mistrzynią olimpijską i świata, a także najbardziej utytułowaną sprinterką w historii Pucharu Świata.</p><br>
+                            <table>
+                                <tr>
+                                    <td style="background-color: gold;">Złote medale</td>
+                                    <td style="background-color: silver;">Srebrne medale</td>
+                                    <td style="background-color: rgba(145, 106, 106, 0.637);">Brązowe medale</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>4</td>
+                                    <td>3</td>
+                                </tr>
+                            </table>
+                    </div>
+                    <div class="image">
+                        <figure>
+                            <img src="images/Bjoergen.jpg" alt="Slide 5">
+                        </figure>
+                    </div>
+                </div>
+                <!-- Dodaj kolejne slajdy w podobny sposób -->
+
+                <div class="navigation">
+                    <button onclick="prevSlide()">Poprzedni</button>
+                    <button onclick="nextSlide()">Następny</button>
+                </div>
+            </div>
+        </p>
+    </article>
+
+    <aside>
+        <iframe src="kontrolkiJS.html"></iframe>
+    </aside>
+
+    <script>
+        document.getElementById('start-presentation').addEventListener('click', function() {
+            document.getElementById('presentation-container').style.display = 'flex';
+        });
+
+        document.getElementById('back-to-main').addEventListener('click', function() {
+            document.getElementById('presentation-container').style.display = 'none';
+        });
+
+        let currentSlide = 1;
+        const totalSlides = 5; // Zaktualizuj tę wartość zgodnie z liczbą slajdów
+
+        function showSlide(n) {
+            let slides = document.getElementsByClassName('slide');
+            if (n > slides.length) {
+                currentSlide = 1;
+            }
+            if (n < 1) {
+                currentSlide = slides.length;
+            }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+            }
+            slides[currentSlide - 1].style.display = 'flex';
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide -= 1);
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide += 1);
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowLeft') {
+                prevSlide();
+            } else if (event.key === 'ArrowRight') {
+                nextSlide();
+            }
+        });
+
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>

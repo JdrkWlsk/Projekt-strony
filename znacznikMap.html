@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Znacznik MAP</title>
+
+    <style>
+        header, h2{
+            color: black;
+            text-align: center;
+        }
+        .nazwaKlasy{
+            background-color: black;
+            color: white;
+        }
+        body {
+            margin: 0;
+            overflow-x: hidden;
+        }
+        .image-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        .image-wrapper {
+            display: flex;
+            transition: transform 0.3s ease;
+        }
+        .image-wrapper img {
+            display: block;
+            height: auto;
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 30px;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+            z-index: 1000;
+            border-radius: 50%;
+            user-select: none;
+        }
+        .arrow-left {
+            left: 10px;
+        }
+        .arrow-right {
+            right: 10px;
+        }
+
+    </style>
+    <link rel="stylesheet" href="style/layout.css">
+
+
+
+</head>
+<body>
+    <header style="background-color: rgb(237, 217, 102); color: black; font-family: Arial, Helvetica, sans-serif;">
+        <h1>Strona o igrzyskach olimpijskich</h1>
+    </header>
+    <nav>
+        <h2 style="font-family: Arial, Helvetica, sans-serif">Menu</h2>
+        <ul>
+            <li><a href="index.html">Strona główna</a></li>
+            <li><a href="artykul.html">Artykuł</a></li>
+            <li><a href="tabela.html">Tabela</a></li>
+            <li><a href="formularz.html">Formularz</a></li>
+            <li><a href="przelicznik.html">Przelicznik</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="prezentacja.html">Prezentacja</a></li>
+            <li><a href="znacznikMap.html">Znacznik MAP</a></li>
+            <li><a href="canvas.html">Canvas</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+
+        </ul>
+    </nav>
+    <article>
+    <h2>Miejsca, w których odbyły się Letnie Igrzyska Olimpijskie w erze nowożytnej</h2>
+    Kliknij na wybrany rok, aby dowiedzieć się więcej o tej edycji igrzysk: <p>
+        <!-- Obraz z mapą klikalną -->
+    <div class="image-container">
+        <div class="image-wrapper" id="imageWrapper">
+            <img id="map-image" src="images/lokalizacjeLIO.png" usemap="#image-map" alt="Mapa Letnich Igrzysk Olimpijskich">
+        </div>
+        <!-- Strzałka w lewo -->
+        <div class="arrow arrow-left" onclick="scrollImage(100)">&#9664;</div>
+        <!-- Strzałka w prawo -->
+        <div class="arrow arrow-right" onclick="scrollImage(-100)">&#9654;</div>
+    </div>
+
+        
+<map name="image-map">
+    <area target="_self" alt="Letnie Igrzyska Olimpijskie 1896" title="Letnie Igrzyska Olimpijskie 1896" href="https://pl.wikipedia.org/wiki/Letnie_Igrzyska_Olimpijskie_1896" coords="663,185,701,209" shape="rect">
+    <area target="_self" alt="Letnie Igrzyska Olimpijskie 1900" title="Letnie Igrzyska Olimpijskie 1900" href="https://pl.wikipedia.org/wiki/Letnie_Igrzyska_Olimpijskie_1900" coords="449,135,498,160" shape="rect">
+    <area target="_self" alt="Letnie Igrzyska Olimpijskie 1904" title="Letnie Igrzyska Olimpijskie 1904" href="https://pl.wikipedia.org/wiki/Letnie_Igrzyska_Olimpijskie_1904" coords="165,165,212,190" shape="rect">
+    <area target="_self" alt="Letnie Igrzyska Olimpijskie 1908" title="Letnie Igrzyska Olimpijskie 1908" href="https://pl.wikipedia.org/wiki/Letnie_Igrzyska_Olimpijskie_1908" coords="384,87,427,113" shape="rect">
+    <area target="_self" alt="Letnie Igrzyska Olimpijskie 1912" title="Letnie Igrzyska Olimpijskie 1912" href="https://pl.wikipedia.org/wiki/Letnie_Igrzyska_Olimpijskie_1912" coords="616,46,656,68" shape="rect">
+    <area target="_self" alt="Letnie Igrzyska Olimpijskie 1920" title="Letnie Igrzyska Olimpijskie 1920" href="https://pl.wikipedia.org/wiki/Letnie_Igrzyska_Olimpijskie_1920" coords="508,62,550,81" shape="rect">
+    <area target="_self" alt="Letnie Igrzyska Olimpijskie 1924" title="Letnie Igrzyska Olimpijskie 1924" href="https://pl.wikipedia.org/wiki/Letnie_Igrzyska_Olimpijskie_1924" coords="500,136,537,160" shape="rect">
+    <area target="_self" alt="Letnie Igrzyska Olimpijskie 1928" title="Letnie Igrzyska Olimpijskie 1928" href="https://pl.wikipedia.org/wiki/Letnie_Igrzyska_Olimpijskie_1928" coords="560,58,602,82" shape="rect">
+    <area target="_self" alt="Letnie Igrzyska Olimpijskie 1932" title="Letnie Igrzyska Olimpijskie 1932" href="https://pl.wikipedia.org/wiki/Letnie_Igrzyska_Olimpijskie_1932" coords="1,224,40,250" shape="rect">
+    <area target="_self" alt="Letnie Igrzyska Olimpijskie 1936" title="Letnie Igrzyska Olimpijskie 1936" href="https://pl.wikipedia.org/wiki/Letnie_Igrzyska_Olimpijskie_1936" coords="608,108,651,128" shape="rect">
+    <area target="_self" alt="Letnie Igrzyska Olimpijskie 1948" title="Letnie Igrzyska Olimpijskie 1948" href="https://pl.wikipedia.org/wiki/Letnie_Igrzyska_Olimpijskie_1948" coords="432,87,470,112" shape="rect">
+    <area target="_self" alt="Letnie Igrzyska Olimpijskie 1952" title="Letnie Igrzyska Olimpijskie 1952" href="https://pl.wikipedia.org/wiki/Letnie_Igrzyska_Olimpijskie_1952" coords="638,73,683,93" shape="rect">
+    <area target="_self" alt="Letnie Igrzyska Olimpijskie 1956" title="Letnie Igrzyska Olimpijskie 1956" href="https://pl.wikipedia.org/wiki/Letnie_Igrzyska_Olimpijskie_1956" coords="1093,534,1137,558" shape="rect">
+    <area target="_self" alt="Letnie Igrzyska Olimpijskie 1960" title="Letnie Igrzyska Olimpijskie 1960" href="https://pl.wikipedia.org/wiki/Letnie_Igrzyska_Olimpijskie_1960" coords="584,171,622,194" shape="rect">
+    <area target="_self" alt="Letnie Igrzyska Olimpijskie 1964" title="Letnie Igrzyska Olimpijskie 1964" href="https://pl.wikipedia.org/wiki/Letnie_Igrzyska_Olimpijskie_1964" coords="1102,189,1144,212" shape="rect">
+    <area target="_self" alt="Letnie Igrzyska Olimpijskie 1968" title="Letnie Igrzyska Olimpijskie 1968" href="https://pl.wikipedia.org/wiki/Letnie_Igrzyska_Olimpijskie_1968" coords="151,260,192,286" shape="rect">
+    <area target="_self" alt="Letnie Igrzyska Olimpijskie 1972" title="Letnie Igrzyska Olimpijskie 1972" href="https://pl.wikipedia.org/wiki/Letnie_Igrzyska_Olimpijskie_1972" coords="600,131,642,150" shape="rect">
+    <area target="_self" alt="Letnie Igrzyska Olimpijskie 1976" title="Letnie Igrzyska Olimpijskie 1976" href="https://pl.wikipedia.org/wiki/Letnie_Igrzyska_Olimpijskie_1976" coords="283,139,324,164" shape="rect">
+    <area target="_self" alt="Letnie Igrzyska Olimpijskie 1980" title="Letnie Igrzyska Olimpijskie 1980" href="https://pl.wikipedia.org/wiki/Letnie_Igrzyska_Olimpijskie_1980" coords="696,96,740,118" shape="rect">
+    <area target="_self" alt="Letnie Igrzyska Olimpijskie 1984" title="Letnie Igrzyska Olimpijskie 1984" href="https://pl.wikipedia.org/wiki/Letnie_Igrzyska_Olimpijskie_1984" coords="47,223,85,250" shape="rect">
+    <area target="_self" alt="Letnie Igrzyska Olimpijskie 1988" title="Letnie Igrzyska Olimpijskie 1988" href="https://pl.wikipedia.org/wiki/Letnie_Igrzyska_Olimpijskie_1988" coords="1022,188,1063,212" shape="rect">
+    <area target="_self" alt="Letnie Igrzyska Olimpijskie 1992" title="Letnie Igrzyska Olimpijskie 1992" href="https://pl.wikipedia.org/wiki/Letnie_Igrzyska_Olimpijskie_1992" coords="535,174,575,195" shape="rect">
+    <area target="_self" alt="Letnie Igrzyska Olimpijskie 1996" title="Letnie Igrzyska Olimpijskie 1996" href="https://pl.wikipedia.org/wiki/Letnie_Igrzyska_Olimpijskie_1996" coords="223,198,264,223" shape="rect">
+    <area target="_self" alt="Letnie Igrzyska Olimpijskie 2000" title="Letnie Igrzyska Olimpijskie 2000" href="https://pl.wikipedia.org/wiki/Letnie_Igrzyska_Olimpijskie_2000" coords="1150,500,1197,526" shape="rect">
+    <area target="_self" alt="Letnie Igrzyska Olimpijskie 2004" title="Letnie Igrzyska Olimpijskie 2004" href="https://pl.wikipedia.org/wiki/Letnie_Igrzyska_Olimpijskie_2004" coords="705,185,744,209" shape="rect">
+    <area target="_self" alt="Letnie Igrzyska Olimpijskie 2008" title="Letnie Igrzyska Olimpijskie 2008" href="https://pl.wikipedia.org/wiki/Letnie_Igrzyska_Olimpijskie_2008" coords="970,155,1014,179" shape="rect">
+    <area target="_self" alt="Letnie Igrzyska Olimpijskie 2012" title="Letnie Igrzyska Olimpijskie 2012" href="https://pl.wikipedia.org/wiki/Letnie_Igrzyska_Olimpijskie_2012" coords="477,87,516,113" shape="rect">
+    <area target="_self" alt="Letnie Igrzyska Olimpijskie 2016" title="Letnie Igrzyska Olimpijskie 2016" href="https://pl.wikipedia.org/wiki/Letnie_Igrzyska_Olimpijskie_2016" coords="362,468,403,493" shape="rect">
+    <area target="_self" alt="Letnie Igrzyska Olimpijskie 2020" title="Letnie Igrzyska Olimpijskie 2020" href="https://pl.wikipedia.org/wiki/Letnie_Igrzyska_Olimpijskie_2020" coords="1150,190,1189,213" shape="rect">
+</map>
+<script>
+        let currentOffset = 0;
+
+function scrollImage(offset) {
+    const wrapper = document.getElementById('imageWrapper');
+    const container = document.querySelector('.image-container');
+    const maxOffset = 0;
+    const minOffset = container.clientWidth - wrapper.scrollWidth;
+
+    currentOffset += offset;
+    if (currentOffset > maxOffset) {
+        currentOffset = maxOffset;
+    } else if (currentOffset < minOffset) {
+        currentOffset = minOffset;
+    }
+
+    wrapper.style.transform = `translateX(${currentOffset}px)`;
+}
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'ArrowLeft') {
+        scrollImage(100);
+    } else if (event.key === 'ArrowRight') {
+        scrollImage(-100);
+    }
+});
+</script>
+    </article>
+    <aside>
+        <iframe src="kontrolkiJS.html"></iframe>
+    </aside>
+</body>
+</html>

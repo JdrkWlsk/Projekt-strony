@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Przelicznik</title>
+
+    <style>
+        header, h2 {
+            color: black;
+            text-align: center;
+        }
+        .nazwaKlasy {
+            background-color: black;
+            color: white;
+        }
+
+    
+    .container {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        box-sizing: border-box;
+    }
+    button {
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #45a049;
+    }
+    #result {
+        margin-top: 20px;
+    }
+
+
+    </style>
+    <link rel="stylesheet" href="style/layout.css">
+</head>
+<body>
+    <header style="background-color: rgb(237, 217, 102); color: black; font-family: Arial, Helvetica, sans-serif;">
+        <h1>Strona o igrzyskach olimpijskich</h1>
+    </header>
+    <nav>
+        <h2 style="font-family: Arial, Helvetica, sans-serif;">Menu</h2>
+        <ul>
+            <li><a href="index.html">Strona główna</a></li>
+            <li><a href="artykul.html">Artykuł</a></li>
+            <li><a href="tabela.html">Tabela</a></li>
+            <li><a href="formularz.html">Formularz</a></li>
+            <li><a href="przelicznik.html">Przelicznik</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="prezentacja.html">Prezentacja</a></li>
+            <li><a href="znacznikMap.html">Znacznik MAP</a></li>
+            <li><a href="canvas.html">Canvas</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+    <article>
+        <div class="container">
+            <h2>Kalkulator skoku w dal</h2>
+            Kalkulator pozwala obliczyć takie wartości jak czas fazy lotu, dystans skoku oraz prędkość poziomą skoczka w dal,
+            na podstawie poniższych parametrów:
+            <br><br>
+            <form id="calcForm">
+                <label for="speed">Prędkość biegu (m/s):</label>
+                <input type="number" id="speed" step="0.01" required><br>
+                <label for="angle">Kąt odbicia (stopnie):</label>
+                <input type="number" id="angle" step="0.01" required><br>
+                <label for="force">Siła odpychania (N):</label>
+                <input type="number" id="force" required><br>
+                <label for="gravity">Wartość grawitacji (m/s²):</label>
+                <input type="number" id="gravity" step="0.01" required><br>
+                <button type="button" onclick="calculate()">Oblicz wynik</button>
+            </form>
+            <div id="result"></div>
+        </div>
+    
+    
+        <script>
+             function calculate() {
+    var speed = parseFloat(document.getElementById("speed").value);
+    var angle = parseFloat(document.getElementById("angle").value);
+    var force = parseFloat(document.getElementById("force").value);
+    var gravity = parseFloat(document.getElementById("gravity").value);
+    
+    var radians = angle * Math.PI / 180; // Zamiana kąta na radiany
+    
+    // Obliczanie odległości skoku
+    var distance = (Math.pow(speed, 2) * Math.sin(2 * radians)) / gravity;
+    
+    // Obliczanie czasu lotu
+    var time = (2 * speed * Math.sin(radians)) / gravity;
+    
+    // Obliczanie prędkości poziomej
+    var horizontalSpeed = speed * Math.cos(radians);
+    
+    var resultText = "Dystans skoku: " + distance.toFixed(2) + " m<br>";
+    resultText += "Czas lotu: " + time.toFixed(2) + " s<br>";
+    resultText += "Prędkość pozioma: " + horizontalSpeed.toFixed(2) + " m/s<br>";
+    
+    document.getElementById("result").innerHTML = resultText;
+}
+        </script>
+    </article>
+    <aside>
+        <iframe src="kontrolkiJS.html"></iframe>
+    </aside>
+</body>
+</html>
+
+
+
+    

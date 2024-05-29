@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Strona z zegarem, licznikiem odwiedzin i czasem spędzonym na stronie</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 0px;
+        }
+        .container {
+            display: inline-block;
+            text-align: left;
+        }
+        .counter, .timer {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="clock">
+            <h2>Zegar</h2>
+            <div id="clock">00:00:00</div>
+        </div>
+        <div class="counter">
+            <h2>Licznik odwiedzin</h2>
+            <div id="visit-count">0</div>
+        </div>
+        <div class="timer">
+            <h2>Czas spędzony na stronie</h2>
+            <div id="time-spent">0 sekund</div>
+        </div>
+    </div>
+
+    <script>
+        // Zegar
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+        setInterval(updateClock, 1000);
+        updateClock(); // Initial call
+
+        // Ustawienie i pobieranie danych z IndexedDB
+        let db;
+        const request = window.indexedDB.open('visitCountDB', 1);
+
+        request.onerror = function(event) {
+            console.log('IndexedDB error:', event.target.error);
+        };
+
+        request.onsuccess = function(event) {
+            db = event.target.result;
+            updateVisitCount();
+        };
+
+        request.onupgradeneeded = function(event) {
+            db = event.target.result;
+            const objectStore = db.createObjectStore('visitCountStore', { keyPath: 'id' });
+            objectStore.add({ id: 1, count: 0 });
+        };
+
+        function updateVisitCount() {
+            const transaction = db.transaction(['visitCountStore'], 'readwrite');
+            const objectStore = transaction.objectStore('visitCountStore');
+            const getRequest = objectStore.get(1);
+
+            getRequest.onsuccess = function(event) {
+                const data = event.target.result;
+                let visitCount = data ? data.count : 0;
+
+                if (!sessionStorage.getItem('visited')) {
+                    visitCount += 1;
+                    objectStore.put({ id: 1, count: visitCount });
+                    sessionStorage.setItem('visited', 'true');
+                }
+
+                document.getElementById('visit-count').textContent = visitCount;
+            };
+        }
+
+        // Czas spędzony na stronie
+        let secondsSpent = parseInt(sessionStorage.getItem('timeSpent')) || 0;
+        function updateTimeSpent() {
+            secondsSpent += 1;
+            const minutes = Math.floor(secondsSpent / 60);
+            const seconds = secondsSpent % 60;
+            document.getElementById('time-spent').textContent = minutes > 0 
+                ? `${minutes} minut ${seconds} sekund` 
+                : `${seconds} sekund`;
+            sessionStorage.setItem('timeSpent', secondsSpent);
+        }
+        setInterval(updateTimeSpent, 1000);
+        updateTimeSpent(); // Initial call to update immediately
+    </script>
+</body>
+</html>
+
+
+
+

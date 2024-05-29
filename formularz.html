@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz</title>
+
+    <style>
+        header, h2{
+            color: black;
+            text-align: center;
+        }
+        .nazwaKlasy{
+            background-color: black;
+            color: white;
+        }
+    </style>
+    <link rel="stylesheet" href="style/layout.css">
+
+
+
+</head>
+<body>
+    <header style="background-color: rgb(237, 217, 102); color: black; font-family: Arial, Helvetica, sans-serif;">
+        <h1>Strona o igrzyskach olimpijskich</h1>
+    </header>
+    <nav>
+        <h2 style="font-family: Arial, Helvetica, sans-serif;">Menu</h2>
+        <ul>
+            <li><a href="index.html">Strona główna</a></li>
+            <li><a href="artykul.html">Artykuł</a></li>
+            <li><a href="tabela.html">Tabela</a></li>
+            <li><a href="formularz.html">Formularz</a></li>
+            <li><a href="przelicznik.html">Przelicznik</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="prezentacja.html">Prezentacja</a></li>
+            <li><a href="znacznikMap.html">Znacznik MAP</a></li>
+            <li><a href="canvas.html">Canvas</a></li>
+            <li><a href="klauzula.html">Kontakt</a></li>
+
+        </ul>
+    </nav>
+    <article>
+        <h2>Ankieta dotycząca igrzysk olimpijskich</h2>
+        <form action="" method="post">
+            <p>
+                Proszę wypełnić poniższą ankietę. <br>
+            </p>
+           
+            <fieldset><legend>Dane respondenta</legend>
+                <label for="pleć">Płeć</label>
+                <select name="pleć" id="pleć">
+                    <option value="kobieta">Kobieta</option>
+                    <option value="mężczyzna">Mężczyzna</option>
+                    <option value="nie podaję" selected>nie podaję</option>
+                </select><br>
+                <label for="dataUr">Data urodzenia</label>
+                <input type="date" name="dataUr" id="dataUr"><br>
+            </fieldset>
+
+            <fieldset><legend>1. W skali od 1 do 5, jak bardzo interesujesz się sportem?</legend>
+                <input type="range" name="Zainteresowania" id="Zainteresowania" 
+                min="1" max="5" step="1" value="3"> <br>
+            </fieldset>
+
+           <fieldset><legend>2. Jak często uprawiasz aktywność fizyczną?</legend>
+                <input type="radio" name="przed_wiek" id=""> codziennie <br>
+                <input type="radio" name="przed_wiek" id=""> kilka razy w tygodniu <br>
+                <input type="radio" name="przed_wiek" id=""> raz w tygodniu <br>
+                <input type="radio" name="przed_wiek" id=""> rzadziej <br>
+            </fieldset>
+
+            <fieldset><legend>3. Które z poniższych dyscyplin olimpijskich Cię interesują?</legend>
+                    <input type="checkbox" name="zainteresowania" id="Lekkoatletyka">
+                    <label for="Lekkoatletyka">Lekkoatletyka</label><br>
+                    <input type="checkbox" name="zainteresowania" id="Pływanie">
+                    <label for="Pływanie">Pływanie</label><br>
+                    <input type="checkbox" name="zainteresowania" id="Tenis">
+                    <label for="js">Tenis</label><br>
+                    <input type="checkbox" name="zainteresowania" id="Gimnastyka">
+                    <label for="p">Gimnastyka sportowa</label><br>
+                    <input type="checkbox" name="zainteresowania" id="Wioślartwo">
+                    <label for="p">Wioślartwo</label><br>
+                    <input type="checkbox" name="zainteresowania" id="Pilka nozna">
+                    <label for="p">Piłka nożna</label><br>
+                </fieldset>
+            
+            <fieldset><legend>3. Czy śledzisz poczynania sportowców na igrzyskach olimpijskich?</legend>
+                <input type="radio" name="przed_wiek" id=""> tak <br>
+                <input type="radio" name="przed_wiek" id=""> nie <br>
+            </fieldset>
+
+
+            <fieldset><legend>Opinia o ankiecie i załącznik</legend>
+                <textarea name="opinia" id="" cols="30" rows="10"
+                placeholder="wpisz opinię"></textarea>
+                <br>
+                <input type="file" name="plik" id="">
+            </fieldset>
+
+            <input type="submit" value="Wyślij">
+            <input type="reset" value="Kasuj formularz">
+        </form>
+    </article>
+    <aside>
+        <iframe src="kontrolkiJS.html" frameborder="0"></iframe>
+    </aside>
+</body>
+</html>

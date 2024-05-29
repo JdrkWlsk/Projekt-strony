@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria</title>
+
+    <style>
+        header, h2{
+            color: black;
+            text-align: center;
+        }
+        .nazwaKlasy{
+            background-color: black;
+            color: white;
+        }
+        
+    </style>
+    <link rel="stylesheet" href="style/layout.css">
+    <link rel="stylesheet" href="style/galeria.css">
+
+
+
+</head>
+<body>
+    <header style="background-color: rgb(237, 217, 102); color: black; font-family: Arial, Helvetica, sans-serif;">
+        <h1>Strona o igrzyskach olimpijskich</h1>
+    </header>
+    <nav>
+        <h2 style="font-family: Arial, Helvetica, sans-serif;">Menu</h2>
+        <ul>
+            <li><a href="index.html">Strona główna</a></li>
+            <li><a href="artykul.html">Artykuł</a></li>
+            <li><a href="tabela.html">Tabela</a></li>
+            <li><a href="formularz.html">Formularz</a></li>
+            <li><a href="przelicznik.html">Przelicznik</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="prezentacja.html">Prezentacja</a></li>
+            <li><a href="znacznikMap.html">Znacznik MAP</a></li>
+            <li><a href="canvas.html">Canvas</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+
+        </ul>
+    </nav>
+    <article>
+        <header>
+            <h2>Przykłady dyscyplin rozgrywanych na igrzyskach olimpijskich</h2>
+        </header>
+
+        <div class="gallery-container">
+            <button class="arrow left" onclick="changeImage(-1)">&#9664;</button>
+    
+            <div class="gallery-item active">
+                <img src="images/lekkoatletyka.png" alt="Zdjęcie 1" class="gallery-image">
+                <div class="caption">Lekkoatletyka</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/gimnastyka.jpeg" alt="Zdjęcie 2" class="gallery-image">
+                <div class="caption">Gimnastyka sportowa</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/siatkowka.jpg" alt="Zdjęcie 3" class="gallery-image">
+                <div class="caption">Siatkówka</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/plywanie.jpg" alt="Zdjęcie 4" class="gallery-image">
+                <div class="caption">Pływanie</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/pilkanozna.jpg" alt="Zdjęcie 5" class="gallery-image">
+                <div class="caption">Piłka nożna</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/skokinarciarskie.jpg" alt="Zdjęcie 6" class="gallery-image">
+                <div class="caption">Skoki narciarskie</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/narciarstwoalpejskie.jpg" alt="Zdjęcie 7" class="gallery-image">
+                <div class="caption">Narciarstwo alpejskie</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/biathlon.jpg" alt="Zdjęcie 8" class="gallery-image">
+                <div class="caption">Biathlon</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/sanczkarstwo.jpg" alt="Zdjęcie 9" class="gallery-image">
+                <div class="caption">Saneczkarstwo</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/hokej.jpg" alt="Zdjęcie 10" class="gallery-image">
+                <div class="caption">Hokej na lodzie</div>
+            </div>
+    
+            <button class="arrow right" onclick="changeImage(1)">&#9654;</button>
+        </div>
+    
+        <script>
+            let currentIndex = 0;
+            const items = document.querySelectorAll('.gallery-item');
+    
+            function changeImage(direction) {
+                items[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + direction + items.length) % items.length;
+                items[currentIndex].classList.add('active');
+            }
+    
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'ArrowLeft') {
+                    changeImage(-1);
+                } else if (event.key === 'ArrowRight') {
+                    changeImage(1);
+                }
+            });
+        </script>
+    </article>
+    <aside>
+        <iframe src="kontrolkiJS.html"></iframe>
+    </aside>
+</body>
+</html>
