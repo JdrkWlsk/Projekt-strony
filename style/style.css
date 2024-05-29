@@ -1,0 +1,251 @@
+/**{
+    box-sizing:border-box;
+}
+
+body
+{
+    width: 1024px;
+    margin: auto;
+}
+
+body>header
+{
+    width: 1024px;
+    height: 150; 
+    background-color: rgb(237, 217, 102);
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+}
+
+nav, article, aside
+{
+    display: block;
+    height: 800px;
+    float: left;
+}
+
+nav, aside
+{
+    width: 210px;
+    background-color: rgb(237, 217, 102);
+}
+
+article
+{
+    width: 604px;
+    background-color: rgb(235, 224, 163);
+    padding: 15px;
+    overflow: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+nav ul, nav ul li{
+    display: block;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+nav ul{
+    width: 190px;
+    background-color: orange;
+    padding: 2px 2px 2px 1px ;
+    border: 4px double red;
+}
+nav ul li{
+    border-bottom: 1px solid red ;
+}
+nav ul a:link, nav ul a:visited{
+    background-color: gold;
+    width: 166px;
+    display: block;
+    text-decoration: none;
+    padding: 7px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    border-left: 10px solid rgba(255, 217, 0, 0.697);
+} 
+nav ul a:hover{
+    background-color: orange;
+    border-left: 20px solid rgb(255, 85, 0);
+}*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 1024px;
+    margin: auto;
+}
+
+body > header {
+    width: 100%;
+    background-color: rgb(237, 217, 102);
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+    margin-bottom: 0;
+}
+
+nav, article, aside {
+    display: block;
+    height: 800px;
+    float: left;
+}
+
+nav, aside {
+    width: 210px;
+    background-color: rgb(237, 217, 102);
+    margin-bottom: 0;
+}
+
+article {
+    width: 604px;
+    background-color: rgb(235, 224, 163);
+    padding: 15px;
+    overflow: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+nav ul, nav ul li {
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul {
+    width: 190px;
+    background-color: rgb(241, 186, 85);
+    padding: 2px 2px 2px 1px;
+    border: 4px double red;
+}
+
+nav ul li {
+    border-bottom: 1px solid red;
+}
+
+nav ul a:link, nav ul a:visited {
+    background-color: gold;
+    width: 166px;
+    display: block;
+    text-decoration: none;
+    padding: 7px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    border-left: 10px solid rgba(255, 217, 0, 0.697);
+}
+
+nav ul a:hover {
+    background-color: orange;
+    border-left: 20px solid rgb(255, 85, 0);
+}
+
+/* Responsywne zmiany dla mniejszych ekranów */
+@media (max-width: 1024px) {
+    body {
+        width: 100%;
+        padding: 0 10px;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header {
+        width: 100%;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+        line-height: 1.2em;
+    }
+
+    nav, article, aside {
+        width: 100%;
+        height: auto;
+        float: none;
+    }
+    aside .hidden-on-mobile {
+        display: none;
+    }
+
+    nav {
+        margin-bottom: 20px;
+    }
+
+    nav ul {
+        width: auto;
+        text-align: center;
+    }
+
+    nav ul li {
+        display: inline-block;
+        margin: 0 10px;
+    }
+
+    nav ul a {
+        display: inline-block;
+        padding: 7px 10px;
+        width: auto;
+        border-left: none;
+        border: 1px solid red;
+    }
+
+    article {
+        order: 1;
+        width: 100%;
+        padding: 15px;
+        text-align: center;
+    }
+
+    article p, article figure {
+        max-width: 100%;
+        margin: auto;
+    }
+    article table {
+        width: 100%;
+        font-size: 0.9em; /* Zmniejszamy rozmiar czcionki tabeli */
+    }
+
+
+    aside {
+        order: 2;
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        max-height: 200px; /* Adjust this value based on the actual content */
+        overflow: hidden; /* Ensure no overflow */
+        font-size: 14px; /* Decrease font size */
+    }
+
+    aside iframe {
+        max-height: 100%; /* Ensure iframe fits within the parent */
+    }
+
+    figure img {
+        max-width: 100%;
+        height: auto;
+    }
+    table {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+
