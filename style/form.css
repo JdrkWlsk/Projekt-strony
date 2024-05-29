@@ -1,0 +1,21 @@
+legend{
+    font-weight: bold;
+    font-size: 20px;
+    text-shadow: 2px 2px 1px red;
+}
+fieldset{
+    width: 400px;
+    border-color: rgb(72, 139, 4) ;
+    border-style: dotted ;
+    border-radius: 20px ;
+}
+label{
+    display: inline-block;
+    width: 100px;
+    margin: 2px 2px 2px 35px;
+    background-color: bisque;
+    border-radius: 10px;
+    text-align: center;
+}
+form{
+    width:400px; margin: auto;}

@@ -1,0 +1,38 @@
+.gallery-container {
+    position: relative;
+    max-width: 800px;
+    text-align: center;
+}
+.gallery-item {
+    display: none;
+}
+.gallery-item.active {
+    display: block;
+}
+.gallery-image {
+    width: 100%;
+    border-radius: 10px;
+}
+.caption {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
+}
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+}
+.arrow.left {
+    left: 10px;
+}
+.arrow.right {
+    right: 10px;
+}
